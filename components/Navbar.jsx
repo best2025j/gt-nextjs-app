@@ -120,11 +120,9 @@ const Navbar = () => {
 
             <div className="border-b border-gray-400 py-4">
               <p className="w-[90%] sm:w-[90%] md:w-full py-2">
-                Let's build something legendary together
+                Let&#39; build something legendary together
               </p>
             </div>
-
-            {/*  */}
 
             <div className="flex flex-col py-4 ">
               <ul className="font-bold space-y-1">
@@ -147,7 +145,7 @@ const Navbar = () => {
 
             <div className="bottom-0 sm:bottom-0 absolute ">
               <p className="uppercase tracking-widest text-[#fff] font-bold">
-                Let's Connect
+                Let&apos; Connect
               </p>
 
               <div className="flex items-center justify-between py-3 text-slate-300 space-x-4 w-full sm:w-[80%]">

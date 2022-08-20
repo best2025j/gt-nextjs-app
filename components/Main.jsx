@@ -20,7 +20,7 @@ const Main = () => {
           </h1>
           <h1 className=" text-blue-600">A Front-End Web Developer</h1>
           <p className=" text-gray-600 sm:max-w-screen-[70%] m-auto">
-            I’m focused on building responsive front-end web applications while
+            I&apos;m focused on building responsive front-end web applications while
             i learn back-end technologies later on.
                   </p>
                   
