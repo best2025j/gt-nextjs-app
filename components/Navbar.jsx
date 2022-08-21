@@ -147,6 +147,7 @@ const Navbar = () => {
               <p className="uppercase tracking-widest text-[#fff] font-bold">
                 Let&apos; Connect
               </p>
+              
 
               <div className="flex items-center justify-between py-3 text-slate-300 space-x-4 w-full sm:w-[80%]">
                 {/* GITHUB ICON LINK */}
