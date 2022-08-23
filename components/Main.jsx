@@ -43,7 +43,7 @@ const Main = () => {
 
             {/*  */}
 
-            <a href="http://">
+            <a href="https://discord.gg/AHyCM78g">
               <div className="rounded-full bg-[#304cb3]  p-5 sm:p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <FaDiscord className="" />
               </div>

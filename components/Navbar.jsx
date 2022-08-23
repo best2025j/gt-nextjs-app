@@ -178,7 +178,7 @@ const Navbar = () => {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://"
+                  href="https://discord.gg/AHyCM78g"
                   onClick={handleClose}
                 >
                   <div className="rounded-full bg-[#304cb3] hover:scale-105 easy-in duration-300 p-2 sm:p-4 cursor-pointer">
