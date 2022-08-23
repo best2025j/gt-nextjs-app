@@ -13,7 +13,7 @@ import {
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState(fals3000e);
   const [shadow, setShadow] = useState(false);
   const handClick = () => setNav(!nav);
   const handleClose = () => setNav(!nav);
@@ -125,7 +125,7 @@ const Navbar = () => {
             </div>
 
             <div className="flex flex-col py-4 ">
-              <ul className="font-bold space-y-1">
+              <ul className="font-bold space-y-1">+
                 <li className="text-sm" onClick={handleClose}>
                   <Link href="#home">Home</Link>
                 </li>
@@ -202,7 +202,7 @@ const Navbar = () => {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="http://"
+                  href="https://gt-work-workspace.slack.com/archives/D03BJKPE6KY"
                   onClick={handleClose}
                 >
                   <div className="rounded-full  bg-gradient-to-r from-[#5651e5] to-[#0d348a] hover:scale-105 easy-in duration-300 p-2 sm:p-4 cursor-pointer">

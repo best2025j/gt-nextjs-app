@@ -59,7 +59,7 @@ const Main = () => {
 
             {/*  */}
 
-            <a href="http://">
+            <a href="https://gt-work-workspace.slack.com/archives/D03BJKPE6KY">
               <div className="rounded-full  bg-gradient-to-r from-[#5651e5] to-[#0d348a] p-5 sm:p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <FaSlack />
               </div>
