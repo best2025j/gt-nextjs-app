@@ -13,7 +13,7 @@ import {
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const [nav, setNav] = useState(fals3000e);
+  const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const handClick = () => setNav(!nav);
   const handleClose = () => setNav(!nav);

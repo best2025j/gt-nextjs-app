@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import ContactImg from "../public/Assets/contact.jpg";
 
@@ -80,9 +80,9 @@ const Contact = () => {
                   </a>
 
                   {/*  */}
-                  <a href="#resume">
-                    <div className="rounded-full shadow-lg bg-gray-500  p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <BsFillPersonLinesFill />
+                  <a href="https://discord.gg/AHyCM78g">
+                    <div className="rounded-full shadow-lg bg-blue-500  p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                      <FaDiscord />
                     </div>
                   </a>
                 </div>
