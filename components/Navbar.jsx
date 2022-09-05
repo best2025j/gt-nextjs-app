@@ -125,7 +125,7 @@ const Navbar = () => {
             </div>
 
             <div className="flex flex-col py-4 ">
-              <ul className="font-bold space-y-1">+
+              <ul className="font-bold space-y-1">
                 <li className="text-sm" onClick={handleClose}>
                   <Link href="#home">Home</Link>
                 </li>
