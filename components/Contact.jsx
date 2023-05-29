@@ -70,9 +70,9 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="https://wa.me/09012902537"
                     target="_blank"
                     rel="noreferrer"
+                    href="https://wa.me/09012902537"
                   >
                     <div className="rounded-full shadow-lg bg-green-500  p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaWhatsapp />
@@ -80,7 +80,11 @@ const Contact = () => {
                   </a>
 
                   {/*  */}
-                  <a href="https://discord.gg/AHyCM78g">
+                  <a
+                    href="https://discord.gg/AHyCM78g"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <div className="rounded-full shadow-lg bg-blue-500  p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaDiscord />
                     </div>
