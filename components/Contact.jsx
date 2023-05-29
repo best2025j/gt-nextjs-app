@@ -1,24 +1,48 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaDiscord, FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import ContactImg from "../public/Assets/contact.jpg";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+  const form = useRef();
 
-  const handleSubmit = () => {
-    setName("");
-    setPhone("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "replace with service id",
+        "replace with template id",
+        form.current,
+        "replace with user id"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
+
+  // const [name, setName] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [subject, setSubject] = useState("");
+  // const [message, setMessage] = useState("");
+
+  // const sendEmail = () => {
+  //   setName("");
+  //   setPhone("");
+  //   setEmail("");
+  //   setSubject("");
+  //   setMessage("");
+  // };
 
   return (
     <div id="contact" className="w-full lg:h-auto">
@@ -99,16 +123,21 @@ const Contact = () => {
 
           <div className="col-span-3 w-full h-auto border border-gray-400 rounded-3xl lg:p-4">
             <div className="p-4">
-              <form onSubmit={handleSubmit} action="https://" method="POST">
+              <form
+                ref={form}
+                onSubmit={sendEmail}
+                action="https://"
+                method="POST"
+              >
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Name</label>
                     <input
-                      className="text-black border-2 rounded-lg p-3 flex border-gray-300"
+                      className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
                       name="name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      // value={name}
+                      // onChange={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -116,42 +145,42 @@ const Contact = () => {
                       Phone Number
                     </label>
                     <input
-                      className="text-black border-2 rounded-lg p-3 flex border-gray-300"
+                      className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
                       name="phone"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      // value={phone}
+                      // onChange={(e) => setPhone(e.target.value)}
                     />
                   </div>
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Email</label>
                   <input
-                    className="text-black border-2 rounded-lg p-3 flex border-gray-300"
+                    className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
                     name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    // value={email}
+                    // onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
-                    className="text-black border-2 rounded-lg p-3 flex border-gray-300"
+                    className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
                     name="subject"
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
+                    // value={subject}
+                    // onChange={(e) => setSubject(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Message</label>
                   <textarea
-                    className="border-2 rounded-lg p-3 text-black border-gray-300"
+                    className="border-2 rounded-lg p-3 outline-none text-black border-gray-300"
                     rows="5"
                     name="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    // value={message}
+                    // onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
                 <button className="w-full p-4 text-gray-100 mt-4">
