@@ -135,7 +135,7 @@ const Contact = () => {
                     <input
                       className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
-                      name="name"
+                      name="user-name"
                       // value={name}
                       // onChange={(e) => setName(e.target.value)}
                     />
@@ -147,7 +147,7 @@ const Contact = () => {
                     <input
                       className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
-                      name="phone"
+                      name="user-phone"
                       // value={phone}
                       // onChange={(e) => setPhone(e.target.value)}
                     />
@@ -158,7 +158,7 @@ const Contact = () => {
                   <input
                     className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
-                    name="email"
+                    name="user-email"
                     // value={email}
                     // onChange={(e) => setEmail(e.target.value)}
                   />
@@ -168,7 +168,7 @@ const Contact = () => {
                   <input
                     className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
-                    name="subject"
+                    name="user-subject"
                     // value={subject}
                     // onChange={(e) => setSubject(e.target.value)}
                   />
@@ -183,7 +183,11 @@ const Contact = () => {
                     // onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
+                <button
+                  type="submit"
+                  value="Send"
+                  className="w-full p-4 text-gray-100 mt-4"
+                >
                   Send Message
                 </button>
               </form>
