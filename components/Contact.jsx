@@ -14,10 +14,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "replace with service id",
-        "replace with template id",
+        "service_2x6en43",
+        "template_ywya2vi",
         form.current,
-        "replace with user id"
+        " OHYztClP2C7E3Glpw"
       )
       .then(
         (result) => {
@@ -29,20 +29,6 @@ const Contact = () => {
         }
       );
   };
-
-  // const [name, setName] = useState("");
-  // const [phone, setPhone] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [subject, setSubject] = useState("");
-  // const [message, setMessage] = useState("");
-
-  // const sendEmail = () => {
-  //   setName("");
-  //   setPhone("");
-  //   setEmail("");
-  //   setSubject("");
-  //   setMessage("");
-  // };
 
   return (
     <div id="contact" className="w-full lg:h-auto">
@@ -123,14 +109,9 @@ const Contact = () => {
 
           <div className="col-span-3 w-full h-auto border border-gray-400 rounded-3xl lg:p-4">
             <div className="p-4">
-              <form
-                ref={form}
-                onSubmit={sendEmail}
-                action="https://"
-                method="POST"
-              >
-                <div className="grid md:grid-cols-2 gap-4 w-full py-2">
-                  <div className="flex flex-col">
+              <form ref={form} onSubmit={sendEmail}>
+                <div className="flex flex-col gap-4 w-full py-2">
+                  <div className="flex flex-col py-2">
                     <label className="uppercase text-sm py-2">Name</label>
                     <input
                       className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
@@ -140,7 +121,8 @@ const Contact = () => {
                       // onChange={(e) => setName(e.target.value)}
                     />
                   </div>
-                  <div className="flex flex-col">
+
+                  {/* <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">
                       Phone Number
                     </label>
@@ -151,9 +133,8 @@ const Contact = () => {
                       // value={phone}
                       // onChange={(e) => setPhone(e.target.value)}
                     />
-                  </div>
-                </div>
-                <div className="flex flex-col py-2">
+                  </div> */}
+
                   <label className="uppercase text-sm py-2">Email</label>
                   <input
                     className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
@@ -163,7 +144,7 @@ const Contact = () => {
                     // onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                <div className="flex flex-col py-2">
+                {/* <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
                     className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
@@ -172,7 +153,7 @@ const Contact = () => {
                     // value={subject}
                     // onChange={(e) => setSubject(e.target.value)}
                   />
-                </div>
+                </div> */}
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Message</label>
                   <textarea
@@ -183,11 +164,7 @@ const Contact = () => {
                     // onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
-                <button
-                  type="submit"
-                  value="Send"
-                  className="w-full p-4 text-gray-100 mt-4"
-                >
+                <button className="w-full p-4 text-gray-100  mt-4">
                   Send Message
                 </button>
               </form>
