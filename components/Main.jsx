@@ -7,6 +7,9 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+
 const Main = () => {
   return (
     <div id="home" className="w-full text-center h-screen pt-16 ">
@@ -18,12 +21,27 @@ const Main = () => {
           <h1 className="text-slate-400">
             Hi, I&#39;m <span className="text-[#ffff]">God&#39;stime</span>
           </h1>
-          <h1 className=" text-blue-600">A Front-End Web Developer</h1>
+
+          <h1 className=" text-blue-600">
+            <span>I&#39;m </span>
+            <TypeAnimation
+              speed={50}
+              wrapper="span"
+              repeat={Infinity}
+              sequence={[
+                "A Front-End Web Developer",
+                2000,
+                "A Forex Trader",
+                200,
+              ]}
+            />
+            {/* A Front-End Web Developer */}
+          </h1>
+          
           <p className=" text-gray-600 sm:max-w-screen-[70%] m-auto">
-            I&apos;m focused on building responsive front-end web applications while
-            i learn back-end technologies later on.
-                  </p>
-                  
+            I&apos;m focused on building responsive front-end web applications
+            while i learn back-end technologies later on.
+          </p>
 
           {/* ICONS */}
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4 space-x-1 sm:space-x-3 text-slate-300">
@@ -64,7 +82,7 @@ const Main = () => {
                 <FaSlack />
               </div>
             </a>
-          </div>  
+          </div>
         </div>
       </div>
     </div>

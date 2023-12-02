@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import React from "react";
 import image from "../public/Assets/gt7.jpeg";
@@ -10,13 +11,23 @@ import {
   FaSlack,
   FaWhatsapp,
 } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
+
   const handClick = () => setNav(!nav);
   const handleClose = () => setNav(!nav);
+
+  const inactiveLink = "hover:text-blue-500 active:text-blue-800";
+  const activeLink = `${inactiveLink} text-[#00AFF0]`;
+
+  // router
+  const router = useRouter();
+  const { asPath } = router;
+  console.log(asPath);
 
   useEffect(() => {
     const handleShadow = () => {
@@ -53,18 +64,54 @@ const Navbar = () => {
         {/*  */}
 
         <div className="">
-          <ul className="hidden md:flex">
-            <li className="pl-4 font-bold text-sm hover:text-gray-400 active:text-blue-300">
-              <Link href="/">Home</Link>
+          <ul className="hidden md:flex space-x-8">
+            <li>
+              <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href={"/"}>
+                  <a className={asPath === "/" ? activeLink : inactiveLink}>
+                    Home
+                  </a>
+                </Link>
+              </motion.div>
             </li>
-            <li className="pl-4 font-bold text-sm hover:text-gray-400 active:text-blue-300">
-              <Link href="#about">About</Link>
+            <li>
+              <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href="/#about">
+                  <a
+                    className={
+                      asPath.includes("#about") ? activeLink : inactiveLink
+                    }
+                  >
+                    About
+                  </a>
+                </Link>
+              </motion.div>
             </li>
-            <li className="pl-4 font-bold text-sm hover:text-gray-400 active:text-blue-300">
-              <Link href="#skills">Skills</Link>
+            <li>
+              <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href={"/#skills"}>
+                  <a
+                    className={
+                      asPath.includes("#skills") ? activeLink : inactiveLink
+                    }
+                  >
+                    Skills
+                  </a>
+                </Link>
+              </motion.div>
             </li>
-            <li className="pl-4 font-bold text-sm hover:text-gray-400 active:text-blue-300">
-              <Link href="#contact">Contact</Link>
+            <li>
+              <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href={"/#contact"}>
+                  <a
+                    className={
+                      asPath.includes("#contact") ? activeLink : inactiveLink
+                    }
+                  >
+                    Contact
+                  </a>
+                </Link>
+              </motion.div>
             </li>
           </ul>
         </div>
@@ -126,17 +173,56 @@ const Navbar = () => {
 
             <div className="flex flex-col py-4 ">
               <ul className="font-bold space-y-1">
-                <li className="text-sm" onClick={handleClose}>
-                  <Link href="#home">Home</Link>
+                <li onClick={handleClose}>
+                  <motion.div whileHover={{ scale: 1.1 }}>
+                    <Link href={"/"}>
+                      <a className={asPath === "/" ? activeLink : inactiveLink}>
+                        Home
+                      </a>
+                    </Link>
+                  </motion.div>
                 </li>
-                <li className="text-sm" onClick={handleClose}>
-                  <Link href="#about">About</Link>
+
+                <li onClick={handleClose}>
+                  <motion.div whileHover={{ scale: 1.1 }}>
+                    <Link href={"/#about"}>
+                      <a
+                        className={
+                          asPath.includes("#about") ? activeLink : inactiveLink
+                        }
+                      >
+                        About
+                      </a>
+                    </Link>
+                  </motion.div>
                 </li>
-                <li className="text-sm" onClick={handleClose}>
-                  <Link href="#skills">Skills</Link>
+
+                <li onClick={handleClose}>
+                  <motion.div whileHover={{ scale: 1.1 }}>
+                    <Link href={"/#skills"}>
+                      <a
+                        className={
+                          asPath.includes("#skills") ? activeLink : inactiveLink
+                        }
+                      >
+                        Skills
+                      </a>
+                    </Link>
+                  </motion.div>
                 </li>
-                <li className="text-sm" onClick={handleClose}>
-                  <Link href="#contact">Contact</Link>
+
+                <li onClick={handleClose}>
+                  <motion.div whileHover={{ scale: 1.1 }}>
+                    <Link href={"/#contact"}>
+                      <a
+                        className={
+                          asPath.includes("#contact") ? activeLink : inactiveLink
+                        }
+                      >
+                        Contact
+                      </a>
+                    </Link>
+                  </motion.div>
                 </li>
               </ul>
             </div>
@@ -147,7 +233,6 @@ const Navbar = () => {
               <p className="uppercase tracking-widest text-[#fff] font-bold">
                 Let&apos; Connect
               </p>
-
 
               <div className="flex items-center justify-between py-3 text-slate-300 space-x-4 w-full sm:w-[80%]">
                 {/* GITHUB ICON LINK */}
