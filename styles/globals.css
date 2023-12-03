@@ -2,38 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-
-  html {
-    scroll-behavior: smooth;
-    /* font-family: 'Raleway', sans-serif; */
-  }
+html {
+  scroll-behavior: smooth;
+  /* font-family: 'Raleway', sans-serif; */
+}
 
 @layer base {
   body {
-    @apply bg-black text-white tracking-wide select-none
+    @apply bg-black text-white tracking-wide select-none;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway]
+    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway];
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl
-  }
-  
-  li {
-    @apply cursor-pointer
+    @apply text-3xl sm:text-4xl;
   }
 
-  button {
-    @apply rounded-xl uppercase bg-gradient-to-r from-[#130dcc] to-[#0a3288] text-white
+  li {
+    @apply cursor-pointer;
   }
 }
-
 
 /* html,
 body {

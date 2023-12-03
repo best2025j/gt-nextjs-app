@@ -164,7 +164,7 @@ const Contact = () => {
                     // onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
-                <button className="w-full p-4 text-gray-100  mt-4">
+                <button className="w-full p-4 mt-4 rounded-xl uppercase bg-gradient-to-r from-[#130dcc] to-[#0a3288] text-white">
                   Send Message
                 </button>
               </form>
