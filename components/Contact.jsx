@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import {
@@ -14,13 +14,14 @@ import ContactImg from "../public/Assets/contact.jpg";
 
 const Contact = () => {
   const form = useRef();
+  const [isMessageSent, setIsMessageSent] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_2x6en43",
+        "service_dg1zplw",
         "template_ywya2vi",
         form.current,
         "OHYztClP2C7E3Glpw"
@@ -29,7 +30,16 @@ const Contact = () => {
         (result) => {
           console.log(result.text);
           console.log("Message sent successfully");
+          // Reset form fields
+          form.current.reset();
+          setIsMessageSent(true);
+
+          // Reset success message after a few seconds (optional)
+          setTimeout(() => {
+            setIsMessageSent(false);
+          }, 5000);
         },
+        
         (error) => {
           console.log(error.text);
           console.error("Error sending message:", error);
@@ -137,57 +147,38 @@ const Contact = () => {
                       className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
                       name="user-name"
-                      // value={name}
-                      // onChange={(e) => setName(e.target.value)}
                     />
                   </div>
-
-                  {/* <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">
-                      Phone Number
-                    </label>
-                    <input
-                      className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                      name="user-phone"
-                      // value={phone}
-                      // onChange={(e) => setPhone(e.target.value)}
-                    />
-                  </div> */}
 
                   <label className="uppercase text-sm py-2">Email</label>
                   <input
                     className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
                     name="user-email"
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                {/* <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Subject</label>
-                  <input
-                    className="text-black outline-none border-2 rounded-lg p-3 flex border-gray-300"
-                    type="text"
-                    name="user-subject"
-                    // value={subject}
-                    // onChange={(e) => setSubject(e.target.value)}
-                  />
-                </div> */}
+
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Message</label>
                   <textarea
                     className="border-2 rounded-lg p-3 outline-none text-black border-gray-300"
                     rows="5"
                     name="message"
-                    // value={message}
-                    // onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
-                <button className="w-full p-4 mt-4 rounded-xl uppercase bg-gradient-to-r from-[#130dcc] to-[#0a3288] text-white">
+                <button
+                  type="submit"
+                  value="send"
+                  className="w-full p-4 mt-4 rounded-xl uppercase bg-gradient-to-r from-[#130dcc] to-[#0a3288] text-white"
+                >
                   Send Message
                 </button>
               </form>
+              {isMessageSent && (
+                <p className="text-green-500 mt-2">
+                  Message sent successfully!
+                </p>
+              )}
             </div>
           </div>
         </div>
