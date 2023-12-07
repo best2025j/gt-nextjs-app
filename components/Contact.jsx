@@ -2,7 +2,13 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import { FaDiscord, FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import {
+  FaDiscord,
+  FaGithub,
+  FaLinkedinIn,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import ContactImg from "../public/Assets/contact.jpg";
 
@@ -17,15 +23,19 @@ const Contact = () => {
         "service_2x6en43",
         "template_ywya2vi",
         form.current,
-        " OHYztClP2C7E3Glpw"
+        "OHYztClP2C7E3Glpw"
       )
       .then(
         (result) => {
           console.log(result.text);
-          console.log("message sent");
+          console.log("Message sent successfully");
         },
         (error) => {
           console.log(error.text);
+          console.error("Error sending message:", error);
+
+          // You can handle the error in a way that makes sense for your application.
+          // For example, you might want to show an error message to the user.
         }
       );
   };
@@ -97,6 +107,16 @@ const Contact = () => {
                   >
                     <div className="rounded-full shadow-lg bg-blue-500  p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaDiscord />
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://x.com/gt2025j"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="rounded-full  bg-gradient-to-r from-[#5651e5] to-[#0d348a] p-5 sm:p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                      <FaTwitter />
                     </div>
                   </a>
                 </div>

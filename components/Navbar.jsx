@@ -22,7 +22,7 @@ const Navbar = () => {
   const handleClose = () => setNav(!nav);
 
   const inactiveLink = "hover:text-blue-500 active:text-blue-800";
-  const activeLink = `${inactiveLink} text-[#00AFF0]`;
+  const activeLink = `${inactiveLink} text-[#2C4BFA]`;
 
   // router
   const router = useRouter();

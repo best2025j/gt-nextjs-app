@@ -2,38 +2,37 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
-// const AnimatedNumbers = dynamic(
-//   () => {
-//     return import("react-animated-numbers");
-//   },
-//   { ssr: false }
-// );
+const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
+  ssr: false,
+});
 
 const achievementsList = [
   {
     metric: "Projects",
-    value: "100",
+    value: "10",
     postfix: "+",
   },
-  {
-    prefix: "~",
-    metric: "Users",
-    value: "100,000",
-  },
+  // {
+  //   prefix: "",
+  //   metric: "Users",
+  //   value: "100",
+  // },
   {
     metric: "Awards",
-    value: "7",
+    value: "5",
   },
   {
     metric: "Years",
-    value: "5",
+    value: "3",
   },
 ];
 
+// ... (other imports)
+
 const AchievementsSection = () => {
   return (
-    <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
+    <div className="py-4 px-4 md:gap-16 md:py-16 md:px-16">
+      <div className="sm:border-[#33353F] sm:border rounded-full md:py-8 px-16 flex flex-col md:flex-row items-center justify-between">
         {achievementsList.map((achievement, index) => {
           return (
             <div
@@ -42,9 +41,9 @@ const AchievementsSection = () => {
             >
               <h2 className="text-white text-4xl font-bold flex flex-row">
                 {achievement.prefix}
-                <div
-                  includeComma
-                  animateToNumber={parseInt(achievement.value)}
+                <AnimatedNumbers
+                  animateToNumber={parseInt(achievement.value.replace(/,/g, ''))} // Remove commas if present
+                  includeComma // Use this prop to include commas
                   locale="en-US"
                   className="text-white text-4xl font-bold"
                   configs={(_, index) => {
@@ -67,3 +66,4 @@ const AchievementsSection = () => {
 };
 
 export default AchievementsSection;
+

@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import AboutImg from "../public/Assets/px1.jpeg";
 import TabButton from "./TabButton";
-import { title } from "process";
 
 const About = () => {
   const Data = [
@@ -12,30 +11,27 @@ const About = () => {
       content: (
         <ul className="list-disc pl-2">
           <li>kwara state polytechnic</li>
+          <li>kwara state university</li>
         </ul>
       ),
     },
-
     {
       title: "Certifications",
       id: "Certifications",
       content: (
         <ul className="list-disc pl-2">
-          <li> certisfied udemy course</li>
-          <li> certisfied udemy course</li>
+          <li> certified udemy course</li>
+          <li> certified udemy course</li>
         </ul>
       ),
     },
   ];
 
-    const [tab, setTab] = useState("skills");
-    // const [isPending, startTransition] = useTransition();
+  const [tab, setTab] = useState(null);
 
-    // const handleTabChange = (id) => {
-    //   startTransition(() => {
-    //     setTab(id);
-    //   });
-    // };
+  const handleTabChange = (id) => {
+    setTab(id === tab ? null : id); // Toggle tab visibility
+  };
 
   return (
     <div
@@ -49,7 +45,7 @@ const About = () => {
           </p>
           <h2 className="py-4 font-serif">Who I Am</h2>
           <p className="py-2 text-gray-400">I am not your average developer</p>
-          <p className="py-2 text-slate-300 w-[432px]">
+          <p className="py-2 text-slate-300 md:w-[432px]">
             I am a front-end web developer with a passion for creating
             interactive and responsive web applications. I have experience
             working with JavaScript, React, Redux, nextjs, HTML, CSS, and Git. I
@@ -58,27 +54,23 @@ const About = () => {
             others to create amazing applications.
           </p>
 
-          <div className="md:grid grid-cols-1 md:grid-cols-2 py-10 gap-20 h-full w-full hidden">
-            {Data.map((item, index) => (
-              <div className="space-y-2 " key={index}>
+          <div className="md:grid grid-cols-1 md:grid-cols-2 py-10 gap-20 h-full w-full">
+            {Data.map((item) => (
+              <div className="space-y-2" key={item.id}>
                 <TabButton
-                  selectTab={() => handleTabChange("skills")}
-                  active={tab === "skills"}
+                  selectTab={() => handleTabChange(item.id)}
+                  active={tab === item.id}
                 >
                   {item.title}
                 </TabButton>
-                <h6>{item.content}</h6>
+                {tab === item.id && <h6>{item.content}</h6>}
               </div>
             ))}
-          </div>
-
-          <div className="mt-8">
-            {Data.map((t) => t.id === tab).content}
           </div>
         </div>
 
         <div className="w-full h-auto m-auto shadow shadow-gray-500 rounded-3xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300">
-          <Image src={AboutImg} className="rounded-3xl h-20 w-[5100px]" alt="/" quality={100}  />
+          <Image src={AboutImg} className="rounded-3xl" alt="/" quality={100} />
         </div>
       </div>
     </div>
