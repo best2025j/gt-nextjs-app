@@ -14,7 +14,7 @@ import {
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-const Navbar = () => {
+const Nav = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
 
@@ -29,25 +29,8 @@ const Navbar = () => {
   const { asPath } = router;
   console.log(asPath);
 
-  useEffect(() => {
-    const handleShadow = () => {
-      if (window.scrollY >= 90) {
-        setShadow(true);
-      } else {
-        setShadow(false);
-      }
-    };
-    window.addEventListener("scroll", handleShadow);
-  }, []);
-
   return (
-    <div
-      className={
-        shadow
-          ? "w-full left-0 right-0 h-16 border-b bg-black border-white duration-1000 easy-in fixed z-[100]"
-          : "fixed w-full left-0 right-0 h-20 z-[100]"
-      }
-    >
+    <div className="w-full left-0 right-0 h-16 bg-black duration-1000 easy-in">
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Link href="/">
           <a>
@@ -64,13 +47,16 @@ const Navbar = () => {
         {/*  */}
 
         <div className="relative">
-          <Image
-            src="/image.png"
-            width={500}
-            height={500}
-            quality={100}
-            alt="/"
-          />
+          <div className="md:flex hidden">
+            <Image
+              src="/image.png"
+              width={500}
+              height={500}
+              quality={100}
+              alt="/"
+            />
+          </div>
+
           <ul className="hidden md:flex space-x-8 absolute top-0">
             <li>
               <motion.div whileHover={{ scale: 1.1 }}>
@@ -312,4 +298,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Nav;
