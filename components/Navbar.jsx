@@ -44,8 +44,8 @@ const Navbar = () => {
     <div
       className={
         shadow
-          ? "w-full h-16 border-b bg-black border-white duration-1000 easy-in fixed z-[100]"
-          : "fixed w-full h-20 z-[100]"
+          ? "w-full left-0 right-0 h-16 border-b bg-black border-white duration-1000 easy-in fixed z-[100]"
+          : "fixed w-full left-0 right-0 h-20 z-[100]"
       }
     >
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">

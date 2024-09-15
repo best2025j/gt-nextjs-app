@@ -9,7 +9,7 @@ html {
 
 @layer base {
   body {
-    @apply bg-black text-white tracking-wide select-none;
+    @apply bg-black text-white tracking-wide select-none max-w-[1240px] mx-auto;
   }
 
   h1,
