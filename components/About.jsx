@@ -69,8 +69,8 @@ const About = () => {
           </div>
         </div>
 
-        <div className="w-full h-auto m-auto shadow shadow-gray-500 rounded-3xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300">
-          <Image src={AboutImg} className="rounded-3xl" alt="/" quality={100} />
+        <div className="w-full h-auto m-auto shadow shadow-gray-500 rounded-3xl flex items-center justify-center p-2 hover:scale-105 ease-in duration-300">
+          <Image src={AboutImg} className="rounded-2xl" alt="/" quality={100} />
         </div>
       </div>
     </div>

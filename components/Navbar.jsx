@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import React from "react";
 import image from "../public/Assets/gt7.jpeg";
+import image2 from "../public/image2.png";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import {
   FaDiscord,
@@ -65,7 +66,7 @@ const Navbar = () => {
 
         <div className="relative">
           <Image
-            src="/image.png"
+            src="/image2.png"
             width={500}
             height={500}
             quality={100}

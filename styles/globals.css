@@ -9,7 +9,7 @@ html {
 
 @layer base {
   body {
-    @apply bg-black text-white tracking-wide select-none max-w-[1240px] mx-auto;
+    @apply bg-black border border-white/10 text-white tracking-wide select-none max-w-[1240px] mx-auto font-[Nexa];
   }
 
   h1,
@@ -18,7 +18,7 @@ html {
   h4,
   h5,
   h6 {
-    @apply font-bold;
+    @apply font-bold font-[Georgia];
   }
 
   h1 {

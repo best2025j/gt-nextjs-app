@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Skills from "../components/Skills";
 import AchievementsSection from "../components/AchievementsSection";
 import Nav from "../components/nav";
+import Projects from "../components/Projects";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <AchievementsSection />
       <About />
       <Skills />
+      <Projects />
       <Contact />
     </div>
   );

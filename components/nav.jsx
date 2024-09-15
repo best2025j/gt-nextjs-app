@@ -30,34 +30,30 @@ const Nav = () => {
   console.log(asPath);
 
   return (
-    <div className="w-full left-0 right-0 h-16 bg-black duration-1000 easy-in">
-      <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
-        <Link href="/">
-          <a>
-            <Image
-              src={image}
-              alt="/"
-              width="40"
-              height="40"
-              className="rounded-full cursor-pointer"
-            />
-          </a>
-        </Link>
+    <div className="w-full h-56 duration-1000 easy-in">
+      <div className="flex justify-between items-start w-full h-full px-4 2xl:px-0">
+        <div className="flex items-center space-x-2 md:p-4">
+          <Link href="/">
+            <a>
+              <Image
+                src={image}
+                alt="/"
+                width="40"
+                height="40"
+                className="rounded-full cursor-pointer"
+              />
+            </a>
+          </Link>
+          <h1 className="text-sm font-black">Audu Boniface Godstime</h1>
+        </div>
 
         {/*  */}
 
-        <div className="relative">
-          <div className="md:flex hidden">
-            <Image
-              src="/image.png"
-              width={500}
-              height={500}
-              quality={100}
-              alt="/"
-            />
-          </div>
-
-          <ul className="hidden md:flex space-x-8 absolute top-0">
+        <div className="relative ">
+          <ul
+            className="hidden md:flex space-x-8 absolute z-50 right-0 md:p-4
+"
+          >
             <li>
               <motion.div whileHover={{ scale: 1.1 }}>
                 <Link href={"/"}>
@@ -107,6 +103,15 @@ const Nav = () => {
               </motion.div>
             </li>
           </ul>
+
+          <Image
+            src="/image2.png"
+            width="500"
+            height="500"
+            className="w-full"
+            quality={100}
+            alt="/"
+          />
         </div>
 
         {/*  */}
