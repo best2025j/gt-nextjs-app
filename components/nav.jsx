@@ -30,8 +30,8 @@ const Nav = () => {
   console.log(asPath);
 
   return (
-    <div className="w-full h-56 duration-1000 easy-in">
-      <div className="flex justify-between items-start w-full h-full px-4 2xl:px-0">
+    <div className="w-full md:h-56 md:py-0 py-3 border-b md:border-none top-0 left-0 h-16 bg-black md:bg-none fixed md:relative z-50 duration-1000 easy-in">
+      <div className="flex justify-between md:items-start items-center w-full h-full px-4 2xl:px-0">
         <div className="flex items-center space-x-2 md:p-4">
           <Link href="/">
             <a>
@@ -44,7 +44,9 @@ const Nav = () => {
               />
             </a>
           </Link>
-          <h1 className="text-sm font-black">Audu Boniface Godstime</h1>
+          <h1 className="text-sm font-black md:flex hidden">
+            Audu Boniface Godstime
+          </h1>
         </div>
 
         {/*  */}
@@ -104,14 +106,16 @@ const Nav = () => {
             </li>
           </ul>
 
-          <Image
-            src="/image2.png"
-            width="500"
-            height="500"
-            className="w-full"
-            quality={100}
-            alt="/"
-          />
+          <div className="hidden md:flex">
+            <Image
+              src="/image2.png"
+              width="500"
+              height="500"
+              className="w-full"
+              quality={100}
+              alt="/"
+            />
+          </div>
         </div>
 
         {/*  */}

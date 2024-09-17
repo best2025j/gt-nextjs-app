@@ -45,7 +45,7 @@ const About = () => {
           </p>
           <h2 className="py-4 font-serif">Who I Am</h2>
           <p className="py-2 text-gray-400">I am not your average developer</p>
-          <p className="py-2 text-slate-300 md:w-[432px]">
+          <p className="py-2 text-slate-300 md:w-[432px] text-sm md:text-base">
             I am a front-end web developer with a passion for creating
             interactive and responsive web applications. I have experience
             working with JavaScript, React, Redux, nextjs, HTML, CSS, and Git. I

@@ -9,7 +9,7 @@ html {
 
 @layer base {
   body {
-    @apply bg-black border border-white/10 text-white tracking-wide select-none max-w-[1240px] mx-auto font-[Nexa];
+    @apply bg-black md:border border-white/10 text-white tracking-wide select-none w-full md:max-w-[1240px] mx-auto font-[Nexa];
   }
 
   h1,
@@ -22,11 +22,11 @@ html {
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway];
+    @apply text-sm sm:text-5xl md:text-6xl font-[Raleway];
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl;
+    @apply text-sm sm:text-4xl;
   }
 
   li {
